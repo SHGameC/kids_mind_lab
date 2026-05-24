@@ -45,21 +45,21 @@
 
   /* Все блоки относительные для позиционирования пузырьков */
   .hero, .about, .hp-approach, .hp-learn-program,
-  .journey, .review, .works, .faq-section, .cta-section {
+  .journey, .review, .works, .pricing, .faq-section, .cta-section {
     position: relative;
     overflow: hidden;
   }
 
   /* Перекрываем шов между секциями на 2px, чтобы убрать артефакт рендеринга */
   .about, .hp-approach, .hp-learn-program,
-  .journey, .review, .works, .faq-section, .cta-section {
+  .journey, .review, .works, .pricing, .faq-section, .cta-section {
     margin-top: -2px;
   }
 
   /* Контент всегда поверх пузырьков */
   .faq-inner, .cta-inner, .about-inner, .review-inner,
   .works-inner, .journey-inner, .hp-approach-container,
-  .hp-learn-program__container, .hero-content, .hero-photo {
+  .hp-learn-program__container, .hero-content, .hero-photo, .pricing-inner {
     position: relative;
     z-index: 1;
   }
@@ -1322,9 +1322,159 @@
     .review-card { padding: 32px 24px; }
   }
 
+  /* ===== PRICING ===== */
+
+  .pricing {
+    background: #FFF8EC;
+    padding: 90px 24px;
+  }
+
+  .pricing-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .pricing-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #F9A83A;
+    margin-bottom: 16px;
+  }
+
+  .pricing-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    color: #35393E;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .pricing-sub {
+    font-size: 16px;
+    color: #4A4540;
+    margin-bottom: 52px;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .pricing-card {
+    background: #FCFCFC;
+    border-radius: 24px;
+    padding: 40px 36px;
+    text-align: left;
+    border: 1.5px solid #ede4d4;
+    box-shadow: 0 4px 28px rgba(53,57,62,0.06);
+  }
+
+  .pricing-card--dark {
+    background: #35393E;
+    border-color: #35393E;
+  }
+
+  .pricing-badge {
+    display: inline-flex;
+    background: #F9A83A;
+    color: #35393E;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+
+  .pricing-format {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #F9A83A;
+    margin-bottom: 10px;
+  }
+
+  .pricing-price {
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 900;
+    color: #35393E;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .pricing-price span {
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .pricing-card--dark .pricing-price { color: #FCFCFC; }
+
+  .pricing-period {
+    font-size: 13px;
+    color: #a09080;
+    margin-bottom: 28px;
+  }
+
+  .pricing-card--dark .pricing-period { color: rgba(252,252,252,0.45); }
+
+  .pricing-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pricing-features li {
+    font-size: 15px;
+    color: #4A4540;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.4;
+  }
+
+  .pricing-card--dark .pricing-features li { color: rgba(252,252,252,0.8); }
+
+  .pricing-check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(249,168,58,0.18);
+    color: #F9A83A;
+    font-size: 12px;
+    font-weight: 900;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .pricing-card--dark .pricing-check {
+    background: rgba(249,168,58,0.25);
+  }
+
+  .pricing-note {
+    font-size: 15px;
+    color: #4A4540;
+  }
+
+  .pricing-note strong { color: #35393E; font-weight: 700; }
+
+  @media (max-width: 640px) {
+    .pricing-grid { grid-template-columns: 1fr; }
+    .pricing-card { padding: 32px 24px; }
+  }
+
   /* ===== FAQ ===== */
-  
-  
+
+
   .faq-section {
     background: #FCFCFC;
     padding: 80px 24px;
@@ -1786,13 +1936,13 @@
       <!-- Математика -->
       <div class="hp-learn-program__card hp-learn-program__card--math">
         <div class="hp-learn-program__floater hp-learn-program__floater--1">
-          <img src="https://github.com/SHGameC/kids_mind_lab/blob/main/take_7_from_here._Make_202605181427.jpeg?raw=true" alt="">
+          <img src="https://github.com/SHGameC/kids_mind_lab/blob/main/pictures/take_7_from_here._Make_202605181427.jpeg?raw=true" alt="">
         </div>
         <div class="hp-learn-program__floater hp-learn-program__floater--2">
-          <img src="https://github.com/SHGameC/kids_mind_lab/blob/main/take_6_from_here._Make_202605181429.jpeg?raw=true" alt="">
+          <img src="https://github.com/SHGameC/kids_mind_lab/blob/main/pictures/take_6_from_here._Make_202605181429.jpeg?raw=true" alt="">
         </div>
         <div class="hp-learn-program__floater hp-learn-program__floater--3">
-          <img src="https://github.com/SHGameC/kids_mind_lab/blob/main/take_3_from_picture_1._202605181432.jpeg?raw=true" alt="">
+          <img src="https://github.com/SHGameC/kids_mind_lab/blob/main/pictures/take_3_from_picture_1._202605181432.jpeg?raw=true" alt="">
         </div>
         <div class="hp-learn-program__card-background">
           <img src="https://static.tildacdn.ink/tild6634-6364-4231-a332-663830306238/photo-1758685733685-.jpg" alt="">
@@ -1824,13 +1974,13 @@
       <!-- Шахматы -->
       <div class="hp-learn-program__card hp-learn-program__card--chess">
         <div class="hp-learn-program__floater hp-learn-program__floater--1">
-          <img src="https://github.com/SHGameC/kids_mind_lab/blob/main/create_for_me_a_cartoonish_202605181243.jpeg?raw=true" alt="">
+          <img src="https://github.com/SHGameC/kids_mind_lab/blob/main/pictures/create_for_me_a_cartoonish_202605181243.jpeg?raw=true" alt="">
         </div>
         <div class="hp-learn-program__floater hp-learn-program__floater--2">
-          <img src="https://github.com/SHGameC/kids_mind_lab/blob/main/C2_make_C1_and_remove_202605181301.jpeg?raw=true" alt="">
+          <img src="https://github.com/SHGameC/kids_mind_lab/blob/main/pictures/C2_make_C1_and_remove_202605181301.jpeg?raw=true" alt="">
         </div>
         <div class="hp-learn-program__floater hp-learn-program__floater--3">
-          <img src="https://github.com/SHGameC/kids_mind_lab/blob/main/now_create_cartoonish_horse_chess_202605181307.jpeg?raw=true" alt="">
+          <img src="https://github.com/SHGameC/kids_mind_lab/blob/main/pictures/now_create_cartoonish_horse_chess_202605181307.jpeg?raw=true" alt="">
         </div>
         <div class="hp-learn-program__card-background">
           <img src="https://static.tildacdn.ink/tild3138-6235-4634-a437-613433353263/photo-1777301498237-.jpg" alt="">
@@ -1899,7 +2049,7 @@
 
 
 <!-- ===== БЛОК 1: ОТЗЫВ ===== -->
-<section class="review">
+<section class="review" style="display:none">
   <div class="review-inner">
     <p class="review-label">Что говорят родители</p>
     <h2 class="review-title">Результат видно<br>с первых занятий</h2>
@@ -1935,7 +2085,7 @@
 </section>
 
 <!-- ===== БЛОК 2: РАБОТЫ ДЕТЕЙ ===== -->
-<section class="works">
+<section class="works" style="display:none">
   <div class="works-inner">
     <p class="works-label">Результаты учеников</p>
     <h2 class="works-title">Что создают дети<br>на занятиях</h2>
@@ -1998,6 +2148,49 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+
+  <!-- ===== PRICING ===== -->
+
+
+<section class="pricing">
+  <div class="pricing-inner">
+
+    <p class="pricing-label">Стоимость</p>
+    <h2 class="pricing-title">Понятные цены</h2>
+    <p class="pricing-sub">Пробное занятие — бесплатно и без обязательств</p>
+
+    <div class="pricing-grid">
+
+      <div class="pricing-card">
+        <div class="pricing-badge">Первое занятие офлайн</div>
+        <div class="pricing-format">Онлайн</div>
+        <div class="pricing-price">200 000 <span>сум</span></div>
+        <div class="pricing-period">за занятие · 1 час</div>
+        <ul class="pricing-features">
+          <li><span class="pricing-check">✓</span>Видеосвязь в удобное время</li>
+          <li><span class="pricing-check">✓</span>Не нужно никуда ехать</li>
+          <li><span class="pricing-check">✓</span>Гибкое расписание</li>
+        </ul>
+      </div>
+
+      <div class="pricing-card pricing-card--dark">
+        <div class="pricing-format">Офлайн</div>
+        <div class="pricing-price">300 000 <span>сум</span></div>
+        <div class="pricing-period">за занятие · 1 час</div>
+        <ul class="pricing-features">
+          <li><span class="pricing-check">✓</span>Педагог приезжает к вам домой</li>
+          <li><span class="pricing-check">✓</span>Живой контакт — легче втянуться</li>
+          <li><span class="pricing-check">✓</span>Без доплат за выезд</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="pricing-note">Первое пробное занятие — <strong>бесплатно</strong>. Никаких обязательств.</p>
+
   </div>
 </section>
 
@@ -2225,6 +2418,11 @@ const blockConfig = [
   {
     sel: '.works',
     bubbles: ['rgba(255,255,255,0.15)', 'rgba(255,255,255,0.08)', 'rgba(53,57,62,0.06)'],
+    waveColor: '#FFF8EC'
+  },
+  {
+    sel: '.pricing',
+    bubbles: ['rgba(249,168,58,0.10)', 'rgba(249,168,58,0.06)', 'rgba(53,57,62,0.04)'],
     waveColor: '#FCFCFC'
   },
   {
