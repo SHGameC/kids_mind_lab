@@ -45,14 +45,14 @@
 
   /* Все блоки относительные для позиционирования пузырьков */
   .hero, .about, .hp-approach, .hp-learn-program,
-  .journey, .review, .works, .pricing, .faq-section, .cta-section {
+  .journey, .review, .works, .platform, .pricing, .faq-section, .cta-section {
     position: relative;
     overflow: hidden;
   }
 
   /* Перекрываем шов между секциями на 2px, чтобы убрать артефакт рендеринга */
   .about, .hp-approach, .hp-learn-program,
-  .journey, .review, .works, .pricing, .faq-section, .cta-section {
+  .journey, .review, .works, .platform, .pricing, .faq-section, .cta-section {
     margin-top: -2px;
   }
 
@@ -1333,6 +1333,135 @@
     .review-card { padding: 32px 24px; }
   }
 
+  /* ===== PLATFORM ===== */
+  .platform {
+    background: #35393E;
+    padding: 90px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .platform::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 48px solid rgba(249,168,58,0.07);
+    pointer-events: none;
+  }
+
+  .platform::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    border: 36px solid rgba(249,168,58,0.05);
+    pointer-events: none;
+  }
+
+  .platform-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .platform-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #F9A83A;
+    opacity: 0.8;
+    margin-bottom: 12px;
+  }
+
+  .platform-title {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+
+  .platform-title em {
+    font-style: normal;
+    color: #F9A83A;
+  }
+
+  .platform-desc {
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    max-width: 580px;
+    margin-bottom: 48px;
+  }
+
+  .platform-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .platform-feature {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 24px 20px;
+    transition: background 0.2s;
+  }
+
+  .platform-feature:hover {
+    background: rgba(249,168,58,0.08);
+    border-color: rgba(249,168,58,0.2);
+  }
+
+  .platform-feature-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .platform-feature-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 6px;
+  }
+
+  .platform-feature-text {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  .platform-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #F9A83A;
+    color: #35393E;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 4px 16px rgba(249,168,58,0.3);
+  }
+
+  .platform-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(249,168,58,0.4);
+  }
+
+  @media (max-width: 640px) {
+    .platform-features { grid-template-columns: 1fr; }
+  }
+
   /* ===== PRICING ===== */
 
   .pricing {
@@ -2138,6 +2267,50 @@
 </section>
 
 
+  <!-- ===== PLATFORM ===== -->
+
+<section class="platform">
+  <div class="platform-inner">
+
+    <p class="platform-label">Платформа для учеников</p>
+
+    <h2 class="platform-title">
+      Я не даю всем одно и то же.<br>
+      Для каждого ученика —<br>
+      <em>свои задачи, своя игра, свой темп.</em>
+    </h2>
+
+    <p class="platform-desc">
+      Каждый ученик работает с материалом, который проходит прямо сейчас.
+      Задания подобраны под его тему, мини-игры — под его уровень.
+      Никаких общих упражнений из учебника.
+    </p>
+
+    <div class="platform-features">
+      <div class="platform-feature">
+        <div class="platform-feature-icon">🎯</div>
+        <div class="platform-feature-title">Свои задания</div>
+        <div class="platform-feature-text">Только то, что ребёнок проходит прямо сейчас — не раньше, не позже</div>
+      </div>
+      <div class="platform-feature">
+        <div class="platform-feature-icon">🎮</div>
+        <div class="platform-feature-title">Своя игра</div>
+        <div class="platform-feature-text">Математика через игровую механику — ребёнок тренируется, не замечая этого</div>
+      </div>
+      <div class="platform-feature">
+        <div class="platform-feature-icon">⚡</div>
+        <div class="platform-feature-title">Мгновенный результат</div>
+        <div class="platform-feature-text">Правильно или нет — видно сразу. Без ожидания проверки от учителя</div>
+      </div>
+    </div>
+
+    <a href="https://kids-mind-lab.netlify.app" target="_blank" rel="noopener" class="platform-btn">
+      Посмотреть платформу →
+    </a>
+
+  </div>
+</section>
+
   <!-- ===== PRICING ===== -->
 
 
@@ -2404,6 +2577,11 @@ const blockConfig = [
   {
     sel: '.works',
     bubbles: ['rgba(255,255,255,0.15)', 'rgba(255,255,255,0.08)', 'rgba(53,57,62,0.06)'],
+    waveColor: '#35393E'
+  },
+  {
+    sel: '.platform',
+    bubbles: ['rgba(249,168,58,0.10)', 'rgba(249,168,58,0.06)', 'rgba(255,255,255,0.03)'],
     waveColor: '#FFF8EC'
   },
   {
